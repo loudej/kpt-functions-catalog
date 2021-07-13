@@ -1,0 +1,22 @@
+apiVersion: kpt.dev/v1
+kind: FunctionResultList
+metadata:
+  name: fnresults
+exitCode: 1
+items:
+  - image: gcr.io/kpt-fn-contrib/inline:dev
+    exitCode: 1
+    results:
+      - message: Sometimes your results are good
+        severity: info
+      - message: Sometimes not so good
+        severity: error
+      - message: Resource kind RoleBinding not allowed
+        severity: error
+        resourceRef:
+          apiVersion: rbac.authorization.k8s.io/v1
+          kind: RoleBinding
+          name: the-binding
+        file:
+          path: resources.yaml
+          index: 1

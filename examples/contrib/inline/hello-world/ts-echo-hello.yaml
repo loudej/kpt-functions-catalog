@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ts-echo-hello
+data:
+  main.ts: |
+    import { exec } from 'child_process';
+    import { promisify } from 'util';
+    const execAsync = promisify(exec);
+
+    export default async function helloWorld(configs) {
+      console.error(`Hello, typescript!`);
+
+      const { stdout, stderr } = await execAsync('whoami');
+      console.error(stdout);
+
+      console.error((await execAsync('ls -la')).stdout);
+    }

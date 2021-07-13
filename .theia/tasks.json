@@ -1,0 +1,31 @@
+{
+    "tasks": [
+        {
+            "type": "npm",
+            "script": "test:watch",
+            "path": "functions/contrib/ts/inline/",
+            "group": "build",
+            "label": "BUILD functions/contrib/ts/inline",
+            "problemMatcher": {
+                "owner": "javascript",
+                "fileLocation": [
+                    "absolute"
+                ],
+                "severity": "error",
+                "pattern": {
+                    "regexp": "at +.*\\((.*\\.ts):(\\d+):(\\d+)\\)",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3
+                }
+            }
+        },
+        {
+            "type": "npm",
+            "script": "build",
+            "path": "functions/contrib/ts/inline/",
+            "group": "build",
+            "label": "PRELAUNCH"
+        }
+    ]
+}

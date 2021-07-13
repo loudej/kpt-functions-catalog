@@ -24,6 +24,7 @@ help: ## Print this help
 
 # Edit this list to contain all ts functions
 FUNCTIONS := \
+	inline \
 	inflate-helm-chart \
 	analyze-istio \
 	sops

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ts-validate
+data:
+  main.ts: |-
+    import { generalResult, kubernetesObjectResult, kubernetesKey } from '/home/node/node_modules/kpt-functions';
+    import { isRoleBinding } from "/home/node/dist/gen/io.k8s.api.rbac.v1";
+
+    export default async function validate(configs) {
+      configs.addResults(generalResult(`Sometimes your results are good`, 'info'));
+      configs.addResults(generalResult(`Sometimes not so good`, 'error'));
+
+      for(const rb of configs.get(isRoleBinding)) {
+        configs.addResults(kubernetesObjectResult(`Resource kind RoleBinding not allowed`, rb))
+      }
+    }

@@ -1,0 +1,28 @@
+apiVersion: kpt.dev/v1
+kind: FunctionResultList
+metadata:
+  name: fnresults
+exitCode: 0
+items:
+  - image: gcr.io/kpt-fn-contrib/inline:dev
+    exitCode: 0
+    stderr: |
+      Hello, javascript!
+  - image: gcr.io/kpt-fn-contrib/inline:dev
+    exitCode: 0
+    stderr: |+
+      Hello, typescript!
+      nobody
+
+      total 108
+      drwxr-sr-x    1 node     node          4096 Jul 13 22:42 .
+      drwxr-xr-x    1 root     root          4096 Jul  7 17:24 ..
+      drwxr-sr-x    1 node     node          4096 Jul 13 22:42 dist
+      drwxr-sr-x   10 node     node          4096 Jul 13 22:42 node_modules
+      -rw-r--r--    1 node     node         88741 Jul 13 01:24 package-lock.json
+      -rw-r--r--    1 node     node          1454 Jul 13 08:43 package.json
+
+  - image: gcr.io/kpt-fn-contrib/inline:dev
+    exitCode: 0
+    stderr: |
+      Hello, Kptfile

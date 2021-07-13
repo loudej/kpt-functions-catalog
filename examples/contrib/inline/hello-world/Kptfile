@@ -1,0 +1,13 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata:
+  name: hello-world
+pipeline:
+  mutators:
+    - image: gcr.io/kpt-fn-contrib/inline:dev
+      configPath: js-echo-hello.yaml
+    - image: gcr.io/kpt-fn-contrib/inline:dev
+      configPath: ts-echo-hello.yaml
+    - image: gcr.io/kpt-fn-contrib/inline:dev
+      configMap:
+        main.ts: export default function sayHello(configs) { console.error('Hello, Kptfile'); }
