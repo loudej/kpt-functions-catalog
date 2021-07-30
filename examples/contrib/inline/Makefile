@@ -26,7 +26,9 @@ build: ## build things
 .PHONY: render
 render: ## Render all examples
 	kpt fn render hello-world --image-pull-policy=ifNotPresent --truncate-output=false --results-dir=hello-world/.results
+	cat hello-world/.results/results.yaml
 	kpt fn render validate --image-pull-policy=ifNotPresent --truncate-output=false --results-dir=validate/.results
+	cat validate/.results/results.yaml
 
 .PHONY: test
 test: build render ## Run all e2e tests

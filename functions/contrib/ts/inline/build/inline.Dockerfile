@@ -32,6 +32,8 @@ RUN npm run build && \
 
 FROM node:14.17-alpine3.13
 
+RUN mkdir -p /home/node/dist/dynamic && chown node:node /home/node/dist && chown nobody:node /home/node/dist/dynamic
+
 # Run as non-root user as a best-practices:
 # https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md
 USER node
@@ -43,8 +45,6 @@ WORKDIR /home/node
 COPY --from=builder /home/node/app /home/node
 
 COPY --from=builder /usr/local/bin /usr/local/bin
-
-RUN mkdir dist/dynamic
 
 ENV PATH /usr/local/bin:$PATH
 

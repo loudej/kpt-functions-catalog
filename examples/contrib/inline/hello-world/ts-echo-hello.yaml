@@ -15,4 +15,7 @@ data:
       console.error(stdout);
 
       console.error((await execAsync('ls -la')).stdout);
+
+      console.error((await execAsync('ls -la dist')).stdout);
+      console.error((await execAsync('ls -la dist/dynamic')).stdout);
     }

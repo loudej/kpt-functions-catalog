@@ -14,13 +14,33 @@ items:
       Hello, typescript!
       nobody
 
-      total 108
-      drwxr-sr-x    1 node     node          4096 Jul 13 22:42 .
+      total 120
+      drwxr-sr-x    1 node     node          4096 Jul 14 00:20 .
       drwxr-xr-x    1 root     root          4096 Jul  7 17:24 ..
-      drwxr-sr-x    1 node     node          4096 Jul 13 22:42 dist
-      drwxr-sr-x   10 node     node          4096 Jul 13 22:42 node_modules
+      drwxr-sr-x    1 node     node          4096 Jul 14 00:20 dist
+      drwxr-sr-x   10 node     node          4096 Jul 14 00:20 node_modules
       -rw-r--r--    1 node     node         88741 Jul 13 01:24 package-lock.json
       -rw-r--r--    1 node     node          1454 Jul 13 08:43 package.json
+
+      total 68
+      drwxr-sr-x    1 node     node          4096 Jul 14 00:20 .
+      drwxr-sr-x    1 node     node          4096 Jul 14 00:20 ..
+      drwxr-sr-x    1 nobody   node          4096 Jul 14 00:23 dynamic
+      drwxr-sr-x    2 node     node         12288 Jul 14 00:20 gen
+      -rw-r--r--    1 node     node           165 Jul 14 00:20 inline.d.ts
+      -rw-r--r--    1 node     node          3070 Jul 14 00:20 inline.js
+      -rw-r--r--    1 node     node          1784 Jul 14 00:20 inline.js.map
+      -rw-r--r--    1 node     node           607 Jul 14 00:20 inline_run.d.ts
+      -rw-r--r--    1 node     node           837 Jul 14 00:20 inline_run.js
+      -rw-r--r--    1 node     node           193 Jul 14 00:20 inline_run.js.map
+      -rw-r--r--    1 node     node            11 Jul 14 00:20 inline_test.d.ts
+      -rw-r--r--    1 node     node          1825 Jul 14 00:20 inline_test.js
+      -rw-r--r--    1 node     node          1471 Jul 14 00:20 inline_test.js.map
+
+      total 16
+      drwxr-sr-x    1 nobody   node          4096 Jul 14 00:23 .
+      drwxr-sr-x    1 node     node          4096 Jul 14 00:20 ..
+      drwx--S---    2 nobody   node          4096 Jul 14 00:23 tmp-JnDPkD
 
   - image: gcr.io/kpt-fn-contrib/inline:dev
     exitCode: 0

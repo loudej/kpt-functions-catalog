@@ -2,7 +2,6 @@ import { Configs } from 'kpt-functions';
 import { transpileModule, ModuleKind } from 'typescript';
 import { promises, existsSync } from 'fs';
 import { join, extname, basename, dirname } from 'path';
-import { tmpdir } from 'os';
 
 function changeExtension(file: string, extension: string): string {
   const base = basename(file, extname(file));
@@ -17,7 +16,7 @@ export async function inline(configs: Configs) {
 
   const mainModule = configs.getFunctionConfigValue('main_module') || 'main';
 
-  const dynamicLocation = join(tmpdir(), 'dynamic');
+  const dynamicLocation = join(dirname(__dirname), 'dist', 'dynamic');
   if (!existsSync(dynamicLocation)) {
     await promises.mkdir(dynamicLocation);
   }
